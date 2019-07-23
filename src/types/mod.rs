@@ -3,5 +3,3 @@ pub mod string_t;
 pub mod array_t;
 pub mod vec_t;
 pub mod hex_t;
-
-pub mod dummy;

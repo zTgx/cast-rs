@@ -1,5 +1,5 @@
 extern crate cast_rs;
-use cast_rs::types::array_t;
+use cast_rs::array_t;
 
 fn main() {
     let arr: &[u8] = &[72, 101, 108, 108, 111, 32, 119, 111, 114, 108, 100]; //Hello world

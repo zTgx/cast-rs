@@ -1,5 +1,5 @@
 extern crate cast_rs;
-use cast_rs::types::vec_t;
+use cast_rs::vec_t;
 
 fn main() {
     let v: Vec<u8> = vec![72, 101, 108, 108, 111, 32, 119, 111, 114, 108, 100];
@@ -12,4 +12,3 @@ fn main() {
     let array: &[u8] = vec_t::to_array(&v);
     assert_eq!([72, 101, 108, 108, 111, 32, 119, 111, 114, 108, 100], array);
 }
-

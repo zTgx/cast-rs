@@ -1,9 +1,9 @@
 extern crate cast_rs;
-use cast_rs::types::hex_t;
+use cast_rs::hex_t;
 
 fn main() {
     assert_eq!(
-            hex::decode("48656c6c6f20776f726c6421"),
+            hex_t::decode("48656c6c6f20776f726c6421"),
             Ok("Hello world!".to_owned().into_bytes())
             );
 

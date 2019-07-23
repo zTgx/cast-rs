@@ -1,5 +1,5 @@
 extern crate cast_rs;
-use cast_rs::types::str_t;
+use cast_rs::str_t;
 
 fn main() {
     let x: &str = "Hello world";

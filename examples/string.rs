@@ -1,5 +1,5 @@
 extern crate cast_rs;
-use cast_rs::types::string_t;
+use cast_rs::string_t;
 
 fn main() {
     let x: String = "Hello world".to_string();
