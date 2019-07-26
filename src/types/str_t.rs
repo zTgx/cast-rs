@@ -10,3 +10,86 @@ pub fn to_vec(s: &str) -> Vec<u8> {
     s.as_bytes().to_owned()
 }
 
+static TOKEN_E      : &'static str = "e";
+static TOKEN_ZERO   : &'static str = "0";
+static TOKEN_POINT  : &'static str = ".";
+
+pub fn to_expo(s: &str) -> Result<String, &'static str> {
+    let len = s.len();
+    if len == 1 && s == "." {
+        return Err("invalid input!");
+    }
+
+    for c in s.chars() {
+        if c >= '0' && c <= '9' || c == '.' {
+
+        } else {
+            return Err("invalid input!");
+        }
+    }
+
+    let mut idx: isize = - 1;
+    if let Some(x) = s.find(".") {
+        idx = x as isize;
+    }
+
+    match get_format(idx, len) {
+        FormatType::AtHead => {
+            let ret = TOKEN_ZERO.to_string() + s + TOKEN_E + TOKEN_ZERO;
+            Ok(ret)
+        },
+
+        FormatType::AtRear => {
+            let left_len = len - 1;
+            let move_steps = left_len - 1;
+            let ret = s.chars().nth(0).unwrap().to_string() + TOKEN_POINT + s.get(1..left_len).unwrap() + TOKEN_E + move_steps.to_string().as_str();
+            Ok(ret)
+        },
+
+        FormatType::AtMid => {
+            let idx = idx as usize;
+            let left = s.get(0..idx).unwrap();
+            let right = s.get(idx+1..).unwrap();
+            let left_len = left.len();
+
+            let ret = s.chars().nth(0).unwrap().to_string() + TOKEN_POINT + left.get(1..).unwrap() + right + TOKEN_E + (left_len - 1).to_string().as_str();
+
+            Ok(ret)
+        }
+
+        FormatType::AtNone => {
+            let ret = s.chars().nth(0).unwrap().to_string() + TOKEN_POINT + s.get(1..).unwrap() + TOKEN_E + (len-1).to_string().as_str();
+            Ok(ret)
+        }
+    }
+}
+
+pub enum FormatType {
+    //.开头格式 .11
+    AtHead,
+
+    //.在中间的格式 11.22
+    AtMid,
+
+    //.结尾的格式  11.
+    AtRear,
+
+    //没有.的格式 22
+    AtNone,
+}
+
+pub fn get_format(idx: isize, len: usize) -> FormatType {
+    if idx == 0 {
+        return FormatType::AtHead;
+    }
+
+    if idx == (len - 1) as isize {
+        return FormatType::AtRear;
+    }
+
+    if idx == -1 {
+        return FormatType::AtNone;
+    }
+
+    return FormatType::AtMid;
+}
