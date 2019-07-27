@@ -35,8 +35,13 @@ pub fn to_expo(s: &str) -> Result<String, &'static str> {
 
     match get_format(idx, len) {
         FormatType::AtHead => {
-            let ret = TOKEN_ZERO.to_string() + s + TOKEN_E + TOKEN_ZERO;
-            Ok(ret)
+            if len > 2 {
+                let ret = s.chars().nth(1).unwrap().to_string() + TOKEN_POINT + s.get(2..).unwrap() + TOKEN_E + "-1".to_string().as_str();
+                Ok(ret)
+            } else {
+                let ret = s.chars().nth(1).unwrap().to_string() + TOKEN_POINT + TOKEN_ZERO + TOKEN_E + "-1".to_string().as_str();
+                Ok(ret)
+            }
         },
 
         FormatType::AtRear => {
@@ -62,6 +67,19 @@ pub fn to_expo(s: &str) -> Result<String, &'static str> {
             Ok(ret)
         }
     }
+}
+
+pub fn get_exponent(s: &str) -> isize {
+    let mut ret = 0isize;
+    if let Some(x) = s.find("e") {
+        if let Some(y) = s.get(x+1..) {
+            if let Ok(z) = y.parse::<isize>() {
+                ret = z;
+            }
+        }
+    }
+
+    ret
 }
 
 pub enum FormatType {
