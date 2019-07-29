@@ -56,10 +56,28 @@ pub fn to_expo(s: &str) -> Result<String, &'static str> {
             let left = s.get(0..idx).unwrap();
             let right = s.get(idx+1..).unwrap();
             let left_len = left.len();
+            let right_len = right.len();
+            if s.chars().nth(0).unwrap() != '0' {
+                let ret = s.chars().nth(0).unwrap().to_string() + TOKEN_POINT + left.get(1..).unwrap() + right + TOKEN_E + (left_len - 1).to_string().as_str();
+                return Ok(ret);
+            }
 
-            let ret = s.chars().nth(0).unwrap().to_string() + TOKEN_POINT + left.get(1..).unwrap() + right + TOKEN_E + (left_len - 1).to_string().as_str();
+            let mut right_index = 0;
+            while right_index < right_len {
+                if right.chars().nth(right_index).unwrap() != '0' {
+                    break;
+                }
 
-            Ok(ret)
+                right_index += 1;
+            }
+
+            if right_index == right_len - 1 {
+                let ret = right.chars().nth(right_index).unwrap().to_string() + TOKEN_POINT + "0" + TOKEN_E + (-1 - right_index as isize).to_string().as_str();
+                Ok(ret)
+            } else {
+                let ret = right.chars().nth(right_index).unwrap().to_string() + TOKEN_POINT + right.get(right_index+1..).unwrap() + TOKEN_E + (-1 - right_index as isize).to_string().as_str();
+                Ok(ret)
+            }
         }
 
         FormatType::AtNone => {
