@@ -1,6 +1,5 @@
 # cast-rs
 
-![minimum rustc 1.15](https://img.shields.io/badge/rustc-1.15+-red.svg)
 [![Travis status](https://travis-ci.org/zTgx/cast-rs.svg?branch=master)](https://travis-ci.org/zTgx/cast-rs)
 
 A collection of  types cast for Rust.
@@ -23,7 +22,7 @@ Add this to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-cast-rs = "0.1.0"
+cast-rs = "0.1.1"
 ```
 
 and this to your crate root:
