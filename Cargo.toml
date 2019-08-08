@@ -3,6 +3,12 @@ name = "cast-rs"
 version = "0.1.0"
 authors = ["zTgx <beautifularea@163.com>"]
 edition = "2018"
+description = "A collection of types cast for Rust."
+repository = "https://github.com/zTgx/cast-rs.git"
+readme = "README.md"
+keywords = ["types", "cast", "hex"]
+categories = [ "data-structures" ]
+license = "MIT/Apache-2.0"
 
 [dependencies]
 hex = "0.3.2"
@@ -12,3 +18,6 @@ downcast-rs = "1.0.4"
 [lib]
 name = "cast_rs"
 path = "src/lib.rs"
+
+[badges]
+travis-ci = { repository = "zTgx/cast-rs" }
