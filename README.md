@@ -1,4 +1,2 @@
 # cast-rs
-types cast
-
-String/str/[u8]/Vec<u8>/hex
+A collection of  types cast for Rust.
