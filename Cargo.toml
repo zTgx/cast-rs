@@ -1,14 +1,14 @@
 [package]
 name = "cast-rs"
 version = "0.1.0"
-authors = ["beautifularea <beautifularea@gmail.com>"]
+authors = ["zTgx <beautifularea@163.com>"]
 edition = "2018"
 
 [dependencies]
 hex = "0.3.2"
 typename = "0.1.1"
+downcast-rs = "1.0.4"
 
 [lib]
 name = "cast_rs"
 path = "src/lib.rs"
-
