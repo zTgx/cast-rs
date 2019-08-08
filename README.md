@@ -11,6 +11,7 @@ This includes str, String, Vec, Hex, slice, Box...
 
 | Repository | Crate | Documentation |
 | ---------- | ----- | ------------- |
+|  [hex](https://github.com/KokaKiwi/rust-hex)  |  [![crate](https://img.shields.io/crates/v/hex.svg)](https://crates.io/crates/hex) |[![documentation](https://docs.rs/hex/badge.svg)](https://docs.rs/hex)
 |  [downcast-rs](https://github.com/marcianx/downcast-rs)  |  [![crate](https://img.shields.io/crates/v/downcast_rs.svg)](https://crates.io/crates/downcast_rs) |[![documentation](https://docs.rs/downcast-rs/badge.svg)](https://docs.rs/downcast-rs)
 
 Note: `cast-rs` is listed here for reference, but it's not directly included
