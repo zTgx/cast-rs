@@ -23,7 +23,7 @@ Add this to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-cast-rs = { git = "https://github.com/zTgx/cast-rs.git" }
+cast-rs = "0.1.0"
 ```
 
 and this to your crate root:
