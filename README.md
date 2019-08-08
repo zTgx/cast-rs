@@ -1,2 +1,36 @@
 # cast-rs
+
+![minimum rustc 1.15](https://img.shields.io/badge/rustc-1.15+-red.svg)
+[![Travis status](https://travis-ci.org/zTgx/cast-rs.svg?branch=master)](https://travis-ci.org/zTgx/cast-rs)
+
 A collection of  types cast for Rust.
+
+This includes str, String, Vec, Hex, slice, Box...  
+
+`cast-rs` is a meta-crate, re-exporting items from these sub-crates:
+
+| Repository | Crate | Documentation |
+| ---------- | ----- | ------------- |
+|  [downcast-rs](https://github.com/marcianx/downcast-rs)  |  [![crate](https://img.shields.io/crates/v/downcast_rs.svg)](https://crates.io/crates/downcast_rs) |[![documentation](https://docs.rs/downcast-rs/badge.svg)](https://docs.rs/downcast-rs)
+
+Note: `cast-rs` is listed here for reference, but it's not directly included
+in `cast-rs`.  This is a `proc-macro` crate for deriving some of `cast-rs`'s traits.
+
+## Usage
+
+Add this to your `Cargo.toml`:
+
+```toml
+[dependencies]
+cast-rs = { git = "https://github.com/zTgx/cast-rs.git" }
+```
+
+and this to your crate root:
+
+```rust
+extern crate cast_rs;
+```
+
+## Releases
+
+Release notes are available in [RELEASES.md](RELEASES.md).
