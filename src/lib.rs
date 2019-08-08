@@ -7,6 +7,12 @@ pub use crate::types::string_t  as string_t;
 pub use crate::types::vec_t     as vec_t;
 
 extern crate downcast_rs;
+extern crate slice_cast;
+
 pub mod downcast {
      pub use downcast_rs::*;
+}
+
+pub mod slicecast {
+    pub use slice_cast::*;
 }

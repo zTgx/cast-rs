@@ -13,8 +13,8 @@ exclude = [ "/.travis.yml" ]
 
 [dependencies]
 hex = "0.3.2"
-typename = "0.1.1"
 downcast-rs = "1.0.4"
+slice-cast = "0.1"
 
 [lib]
 name = "cast_rs"
