@@ -1,12 +1,12 @@
 [package]
 name = "cast-rs"
-version = "0.1.2"
+version = "0.2.0"
 authors = ["zTgx <beautifularea@163.com>"]
 edition = "2018"
 description = "A collection of types cast for Rust."
 repository = "https://github.com/zTgx/cast-rs.git"
 readme = "README.md"
-keywords = [ "cast", "casttype", "types", "hex" ]
+keywords = [ "cast", "casttype", "types", "hex", "downcast", "slicecast"]
 categories = [ "data-structures" ]
 license = "MIT/Apache-2.0"
 exclude = [ "/.travis.yml" ]
