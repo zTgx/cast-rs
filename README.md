@@ -1,10 +1,8 @@
 # cast-rs
 
-[![Travis status](https://travis-ci.org/zTgx/cast-rs.svg?branch=master)](https://travis-ci.org/zTgx/cast-rs)
+[![Travis status](https://travis-ci.org/zTgx/cast-rs.svg?branch=master)](https://travis-ci.org/zTgx/cast-rs) [![crate](https://img.shields.io/crates/v/cast-rs.svg)](https://crates.io/crates/cast-rs)
 
 A collection of  types cast for Rust.
-
-This includes str, String, Vec, Hex, slice, Box...  
 
 `cast-rs` is a meta-crate, re-exporting items from these sub-crates:
 
@@ -26,10 +24,21 @@ Add this to your `Cargo.toml`:
 cast-rs = "0.1.2"
 ```
 
-and this to your crate root:
+and those to your crate root:
+### hex
+```rust
+use cast_rs::hexcast;
+```
 
+### downcast
 ```rust
 extern crate cast_rs;
+use cast_rs::downcast::*;
+```
+
+### slicecast
+```rust
+use cast_rs::slicecast;
 ```
 
 ## Releases
