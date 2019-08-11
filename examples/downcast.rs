@@ -18,7 +18,7 @@ impl Base for Bar {}
 
 fn main() {
     // Create a trait object.
-    let base: Box<Base> = Box::new(Foo(42));
+    let base: Box<dyn Base> = Box::new(Foo(42));
 
     // Try sequential downcasts.
     if let Some(foo) = base.downcast_ref::<Foo>() {
