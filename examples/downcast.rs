@@ -1,7 +1,6 @@
 // Import macro via `macro_use` pre-1.30.
 
-extern crate cast_rs;
-use cast_rs::downcast::*;
+use cast_rs::downcast_rs::*;
 
 // To create a trait with downcasting methods, extend `Downcast` and run
 // `impl_downcast!()` on the trait.
