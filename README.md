@@ -21,7 +21,7 @@ Add this to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-cast-rs = "0.2.0"
+cast-rs = "0.2.1"
 ```
 
 and those to your crate root:
