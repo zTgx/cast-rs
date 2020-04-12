@@ -1,6 +1,6 @@
 [package]
 name = "cast-rs"
-version = "0.2.0"
+version = "0.2.1"
 authors = ["zTgx <beautifularea@163.com>"]
 edition = "2018"
 description = "A collection of types cast for Rust."
@@ -12,8 +12,8 @@ license = "MIT/Apache-2.0"
 exclude = [ "/.travis.yml" ]
 
 [dependencies]
-hex = "0.3.2"
-downcast-rs = "1.0.4"
+hex = "0.4.2"
+downcast-rs = "1.1.1"
 slice-cast = "0.1"
 
 [lib]
