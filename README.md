@@ -27,20 +27,15 @@ cast-rs = "0.2.1"
 and those to your crate root:
 ### hex
 ```rust
-use cast_rs::hexcast;
+use cast_rs::hex;
 ```
 
 ### downcast
 ```rust
-extern crate cast_rs;
-use cast_rs::downcast::*;
+use cast_rs::downcast_rs::*;
 ```
 
 ### slicecast
 ```rust
-use cast_rs::slicecast;
+use cast_rs::slice_cast;
 ```
-
-## Releases
-
-Release notes are available in [RELEASES.md](RELEASES.md).
